@@ -1,0 +1,13 @@
+﻿.tweets-container {
+    width: 300px;
+}
+.tweets-header {
+    
+}
+.tweets-entry {
+    background-color: #C2EBFF;
+    height: 80px;
+}
+.tweets-entry-hover {
+    background-color: #8ACEFF;
+}

@@ -1,0 +1,68 @@
+﻿/*
+    jQuery's holy dollar
+    Minko Gechev @mgechev
+*/
+#holy {
+    position: relative;
+}
+#holy-dollar {
+    font-size: 450px;
+    font-family: Verdana;
+    background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#444));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;    
+    color: #fff;
+    text-shadow: 2px 2px 10px #000;  
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 2;
+}
+#holy-halo {
+    position: absolute;
+    top: -10px;
+    left: 65px;
+    -webkit-animation: move-halo 5s;
+    -webkit-animation-iteration-count: infinite;
+}
+#holy-halo:before, #holy-halo:after {
+    width: 200px;
+    height: 200px;
+    border: 30px solid #FFFF00;    
+    border-radius: 200px;
+    background-color: transparent;
+    -webkit-transform: rotate3d(9,1,0,70deg);
+    -webkit-box-shadow: 5px 5px 30px #FFFF00;
+    backface-visibility: visible;
+    position: absolute;
+    content: '';
+}
+#holy-halo:before {
+    border-top-width: 0px;  
+    left: -50px;
+    z-index: 3;    
+}
+#holy-halo:after {
+    border-width: 0px;
+    border-top-width: 30px;
+    left: -20px;
+    top: -2px;
+    z-index: -1;
+}
+@-webkit-keyframes move-halo {
+    0% { top: 40px; left: 65px }
+    33% { left: 72px }
+    50% { top: 0px;  left: 65px; }
+    66% {  left: 58px; }
+    100% { top: 40px; left: 65px; }
+}
+.jq-intro-ball {
+    width: 100px;
+    height: 100px;
+    border-radius: 100px;
+    background-color: transparent;
+    background-image: -webkit-gradient(radial,45% 45%,20,45% 45%,70,from(#7EBAD9),color-stop(75%, #1070A1),to(rgba(255,255,255,0)));
+    position: absolute;
+    left: 10%;
+    z-index: 300;
+}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset='utf-8'>
+<title>Demo App</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+<script src="src/tweets.js"></script>
+<link rel='stylesheet' type='text/css' href='styles/style.css'>
+<script>
+$(function () {
+    Tweets.render('initLab', $('#tweets1'));
+    Tweets.render('SofiaJavaScript', $('#tweets2'));
+    Tweets.render('mgechev', $('#tweets3'));
+});
+</script>
+</head>
+<body>
+<div id="tweets1"></div>
+<div id="tweets2"></div>
+<div id="tweets3"></div>
+</body>
+</html>

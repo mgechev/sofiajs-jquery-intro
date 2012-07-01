@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf8">
+<title>jQuery introduction</title>
+<link rel="stylesheet" href="./style/deck.core.css">
+<link rel="stylesheet" href="./style/web-2.0.css">
+<link rel="stylesheet" href="./style/horizontal-slide.css">
+<link rel="stylesheet" href="./style/deck.hash.css">
+<link rel="stylesheet" href="./style/deck.scale.css">
+<link rel="stylesheet" href="./style/custom-styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="./src/modernizr.custom.js"></script>
+<script src="./src/deck.core.js"></script>
+<script src="./src/deck.scale.js"></script>
+<script src="./src/deck.hash.js"></script>
+<script src="./src/presentation.js"></script>
+</head>
+<body class="deck-container">
+
+<section class="slide jq-intro-slide">
+    <h1>Introduction to jQuery</h1>
+    <h3>June 2012 <a href="http://sofiajs.org/" target="_blank">SofiaJS</a></h3>
+    <div>
+        Minko Gechev
+        <ul>
+            <li>Twitter - <a href="http://twitter.com/mgechev/" target="_blank">@mgechev</a></li>
+            <li>GitHub - <a href="http://github.com/mgechev/" target="_blank">mgechev</a></li>
+            <li>Blog - <a href="http://blog.mgechev.com/" target="_blank">blog.mgechev.com</a></li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <div style="">
+        <img src="images/content.png" alt="" style="width: 30%; position: absolute; right: 15%; top: 20%;" />    
+        <h2>Content</h2>
+        <ul>
+            <li class="slide">What is jQuery?</li>
+            <li class="slide">Why jQuery?</li>    
+            <li class="slide">What is $?</li>
+            <li class="slide">Selectors</li>
+            <li class="slide">DOM</li>
+            <li class="slide">Ajax</li>
+            <li class="slide">Use the wheel</li>
+            <li class="slide">Events</li>
+            <li class="slide">jQuery UI</li>
+            <li class="slide">Useful links</li>
+        </ul>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>What is jQuery</h2>
+    <blockquote cite="http://en.wikipedia.org/">
+        <p>jQuery is a cross-browser JavaScript library designed to simplify the client-side scripting of HTML</p>
+    </blockquote>
+    <img src="images/wisdom.jpeg" alt="" />
+</section>
+
+<section class="slide">
+    <h2>Why jQuery?</h2>
+    <img src="images/champion.png" alt="" style="position: absolute; right: 20%; top: 25%; width: 25%;" />    
+    <ul>
+        <li class="slide">Small amount of code</li>
+        <li class="slide">Cross-browser</li>
+        <li class="slide">Easy DOM manipulation</li>
+        <li class="slide">Strong community</li>
+        <li class="slide">Easy to use</li>
+        <li class="slide">Well documented</li>
+        <li class="slide">Small (32KB, Minified and Gzipped)</li>
+        <li class="slide">...and wait for it...</li>
+        <li class="slide">Awesome effects</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>What is $?</h2>
+    <h3>The Holy $</h3>
+    <div style="float: right; margin-right: 30%;">
+    <span id="holy">
+        <span id="holy-halo"></span>
+        <span id="holy-dollar">$</span>
+    </span>    
+    </div>
+    <div style="float: left;">
+        <pre>
+            <code>
+    $ == jQuery //true
+    $ === jQuery //true
+    $ instanceof Object //true
+    $ instanceof Function //true
+    typeof $ === 'function' //true
+            </code>
+        </pre>
+    </div>
+</section>
+
+
+
+<section class="slide">
+    <h2>Selectors</h2>
+    <div>
+        <pre>
+            <code>
+    //Selecting DOM element/s by:
+    $('tagname')
+    $('#id') //id
+    $('.className')
+    $('[attribute="value"]')
+    $('parent > child') //$('ul.topnav > li')
+    $(':contains("text")')  //$(':contains("its awesome, right?")')               
+            </code>
+        </pre>
+    </div>
+</section>
+
+
+<section class="slide">
+    <h2>DOM</h2>
+    <div>
+        <pre>
+            <code>
+    //Few basic DOM manipulations
+    elem.width();
+    elem.width(200);
+    elem.outerWidth();
+    elem.outerWidth(true);
+    elem.offset();
+    elem.insertBefore(another);
+    elem.text();
+    elem.html();
+            </code>
+        </pre>
+    </div>
+    <!--<img src="images/ie-chrome-firefox.jpg" style="position: absolute; top: 30%; width: 30%; right: 15%;" />-->
+</section>
+
+<section class="slide">
+    <h2>Ajax</h2>
+    <div>XMLHttpRequest</div>
+    <div class="slide" style="color: #ff0000">
+        Internet Explorer...
+        <div class="slide" style="color: #ff0000">
+            ActiveXObject
+        </div>
+    </div>
+    <pre class="slide">
+        <code>
+        $.ajax({
+            dataType: 'jsonp',
+            url: url,
+            success: function (data) {
+                //processing the received data
+            }
+        }); 
+        </code>
+    </pre>    
+</section>
+
+<section class="slide">
+    <h2>Reinvent wheel</h2>
+    <img src="images/wheel.jpg" style="width: 30%;" alt="" />
+</section>
+
+<section class="slide">
+    <h2>Effects (1)</h2>
+    <h5>fadeIn/fadeOut</h5>
+    <div class="slide">
+        <pre id="fade-demo">
+            <code>
+                el.fadeOut(1000, function () {
+                    el.fadeIn(1000);
+                });
+            </code>
+        </pre>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Effects (2)</h2>
+    <h5>slideUp/slideDown</h5>
+    <div class="slide">
+        <pre id="slide-demo">
+            <code>
+                el.slideDown(1000, function () {
+                    el.slideUp(1000);
+                });
+            </code>
+        </pre>
+    </div>
+</section>
+
+<section class="slide">
+    <h2>Effects (3)</h2>
+    <h3>Easing</h3>
+    <div class="jq-intro-ball" style="top: 75%;" id="ball-bottom"></div>
+    <div class="jq-intro-ball" style="top: 10%; left: 50%;" id="ball-top"></div>
+    <pre>
+        <code>
+    el.animate({ left: '90%' }, { duration: 3000, easing: easing });
+    setTimeout(function () {
+        el.animate({ left: '10%' }, { duration: 3000, easing: easing });
+    }, 3100);
+        </code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>*Events</h2>
+    <h3>Chain of responsibilities</h3>
+    <img src="images/chain-pattern.gif" alt="" />
+</section>
+
+<section class="slide">
+    <h2>Events (1)</h2>
+    <h3>Document ready</h3>
+    <pre>
+        <code>
+    $(document).ready(function () { 
+        /* A function to execute after the DOM is ready */ 
+    });
+    $(function () { 
+        /* A function to execute after the DOM is ready */ 
+    });
+        </code>
+    </pre>    
+    <h3>Window load</h3>
+    <pre>
+        <code>
+    $(window).load(function () { 
+        /* A function to execute when the event is triggered */ 
+    });
+        </code>
+    </pre>
+</section>
+
+<section class="slide">
+    <h2>Events (2)</h2>
+    <pre><code>
+        el.bind('event-type', data, callback);
+    </code></pre>    
+    <pre><code>
+        el.on('event-type', callback);
+        el.on('event-type', data, callback);
+    </code></pre>
+</section>
+
+<section class="slide">
+    <h2>Events (3)</h2>
+    <pre><code>
+        el.unbind('event-type', data, callback);
+    </code></pre>
+    <pre><code>
+        el.off('event-type', callback);
+    </code></pre>    
+</section>
+
+<section class="slide" id="bubbling-slide">
+    <h2>Events (4) Bubbling</h2>
+    <div style="width: 60%; height: 90%;">
+        <div style="float: left; width: 49%;">
+        <br /><br /><br />
+        <button style="width: 300px; height: 80px; font-size: 30px; color: #1B9EE0;" id="bubbling-button">I'm bubbling</button>
+        <br /><br />
+        <button style="width: 300px; height: 80px; font-size: 30px; color: #1B9EE0;" id="non-bubbling-button">Nothing can pass me</button>
+        </div>
+        <div id="event-log" style="word-wrap:break-word; width: 50%; float: right; height: 100%;margin-top: 10%; text-align: left;">
+        </div>
+    </div>
+    <img src="images/chain.png" alt="" style="position: absolute; right: 10%; top: 10%; width: 30%;" />
+</section>
+
+<section class="slide">
+    <h2>Events (4) Bubbling (2)</h2>
+    <pre><code>
+        $('#non-bubbling-button').click(function(event){
+            event.stopImmediatePropagation();
+        });
+    </code></pre> 
+</section>
+
+<section class="slide">
+    <h2>jQuery UI libraries</h2>
+    <div>
+        jQuery solves a lot of problems. But all plain HTML elements are still:
+        <ul>
+            <li>Ugly (usually using CSS is not enough)</li>
+            <li>Not functional enough</li>
+            <li>Not enough</li>
+        </ul>
+    </div>
+    <img src="images/old-car.jpg" alt="" style="float: right; width: 40%;" />
+</section>
+
+
+<section class="slide">
+    <h2>jQuery UI</h2>
+    <img src="images/balance.png" alt="" style="position: absolute; right: 5%; top: 30%; width: 48%;" />        
+    <div class="slide">Advantages:</div>
+    <ul>
+        <li class="slide">By the jQuery team</li>
+        <li class="slide">Free to use</li>
+        <li class="slide">Code in GitHub</li>
+    </ul>
+    <div class="slide">Disadvantages:</div>
+    <ul>
+        <li class="slide">Ugly themes</li>
+        <li class="slide">Just few widgets</li>
+        <li class="slide">No support</li>
+        <li class="slide">Slow releasing</li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Other UI libraries</h2>
+    <ul>
+        <li class="slide"><a href="http://wijmo.com/">Wijmo</a>
+            <ul>
+                <li>Based on jQuery UI</li>
+                <li>Commercial</li>
+                <li>A lot of widgets</li>
+                <li>Still a lot of bugs</li>
+            </ul>
+        </li>
+        <li class="slide"><a href="http://kendoui.com/">KendoUI</a>
+            <ul>
+                <li>Great design</li>
+                <li>Commercial</li>
+            </ul>
+        </li>
+        <li class="slide"><a href="http://jqwidgets.com/">jQWidgets</a>
+            <ul>
+                <li>Commercial</li>
+                <li>A lot of widgets</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+
+<section class="slide">
+    <h2>Useful links</h2>
+    <ul>
+        <li><a href="http://docs.jquery.com/Main_Page">jQuery Docs</a></li>
+        <li><a href="http://jquery.com/">jQuery</a></li>        
+        <li><a href="http://jqueryui.com/">jQuery UI</a></li>
+    </ul>
+    <img src="images/usefulicon.png" alt="" style="position: absolute; right: 10%; top: 30%; width: 30%;" />
+</section>
+
+<section class="slide">
+    <h2>Thank you for your attention!</h2>
+    <h3>Demo application...</h3>
+    <img src="images/demo.jpg" alt="" />
+</section>
+
+</body>
+</html>
